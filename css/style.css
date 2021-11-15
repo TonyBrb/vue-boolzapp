@@ -22,7 +22,7 @@ body{
 .contacts{
   width: 35%;
   height: 100%;
-  background-color: aqua;
+  background-color:#FAFAFA;
 }
 
 .conversation{
@@ -50,13 +50,16 @@ body{
 .search-bar{
   width: 100%;
   height: 40px;
-  background-color: #fff;
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .list-of-contacts{
-  width: 100%;
+  width: 98%;
   height: calc(100% - 140px);
-  background-color: blue;
+  background-color: #FAFAFA;
 }
 
 .current-contact{
@@ -120,4 +123,66 @@ body{
   font-size: 11px;
   text-decoration: underline;
   color: grey;
+}
+
+.search-bar .lente{
+ width: 18%;
+ background-color: #fff;
+ color: #CCCECF;
+ text-align: center;
+ line-height: 34px;
+ border: solid 1px #F7F8F8;
+ border-right: none;
+}
+
+.search-bar input{
+  width: 80%;
+  height: 36px;
+  border: solid 1px #F7F8F8;
+  border-left: none;
+}
+
+.list-of-contacts ul{
+  list-style: none;
+}
+
+.list-of-contacts ul li{
+  height: 50px;
+  background-color:#fff;
+  display: flex;
+  padding: 5px;
+  border-bottom: 1px solid #EFEFEF;
+  position: relative;
+}
+
+.list-of-contacts ul li:last-child{
+  border-bottom: none;
+}
+
+.list-of-contacts ul li .user-image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.list-of-contacts ul li .user-image img{
+  width: 100%;
+}
+
+.list-of-contacts ul li .name-user{
+  margin-left: 10px;
+}
+
+.list-of-contacts ul li .name-user .message-intro{
+  font-size: 10px;
+  color: #C2C4C5;
+}
+
+.list-of-contacts ul li .data{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+  color: #C2C4C5;
 }
