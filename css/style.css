@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  background: linear-gradient(180deg, #249687 20px, #DADBD3 150px);
+}
+
+.container{
+  min-width: 600px;
+  width: 80%;
+  height: 90%;
+  background-color: yellow;
+  margin: 20px auto;
+  display: flex;
+}
+
+.contacts{
+  width: 35%;
+  height: 100%;
+  background-color: aqua;
+}
+
+.conversation{
+  width: 65%;
+  height: 100%;
+  background-color: red;
+}
+
+.your-name{
+  width: 100%;
+  height: 50px;
+  background-color: #EAEAEA;
+}
+
+.notifications{
+  width: 100%;
+  height: 60px;
+  background-color: #8EDAFD;
+}
+
+.search-bar{
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+}
+
+.list-of-contacts{
+  width: 100%;
+  height: calc(100% - 150px);
+  background-color: blue;
+}
+
+.current-contact{
+  width: 100%;
+  height: 50px;
+  background-color: #EAEAEA;
+  border-left: 1px solid grey;
+}
+
+.messages{
+  width: 100%;
+  height: calc(100% - 100px);
+  background-image: url(../img/mine.jpg);
+}
+
+.digit-message{
+  width: 100%;
+  height: 50px;
+  background-color: #F3EDE8;
+}
