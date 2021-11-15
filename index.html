@@ -56,11 +56,27 @@
     <div class="conversation">
       <div class="current-contact">
         <div class="user-image">
-          <img src="'img/avatar_1.jpg" alt="">
+          <img src="img/avatar_1.jpg" alt="">
+        </div>
+        <div class="current-contact-name">
+          <h5>{{contacts[0].user}}</h5>
+          <span>Ultimo accesso oggi alle 16:00</span>
         </div>
       </div>
-      <div class="messages"></div>
-      <div class="digit-message"></div>
+      <div class="messages">
+        <ul>
+          <li v-for = "(messaggio,index) in contacts[0].messages">
+            <div :class="{ 'inviato' : messaggio.status == 'sent', 'ricevuto' : messaggio.status == 'received' }">
+              {{messaggio.text}}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="digit-message">
+        <i class="far fa-smile"></i>
+        <input type="text" placeholder="Scrivi un messaggio">
+        <i class="fas fa-microphone"></i>
+      </div>
     </div>
   </div>
   
