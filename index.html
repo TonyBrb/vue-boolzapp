@@ -4,14 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <title>Vue Boolzapp</title>
 </head>
 <body>
   <div class="container">
     <div class="contacts">
-      <div class="your-name"></div>
-      <div class="notifications"></div>
+      <div class="your-avatar">
+        <div class="your-image">
+          <img src="img/avatar_io.jpg" alt="">
+        </div>
+        <div class="your-name">Nome Utente</div>
+      </div>
+      <div class="notifications">
+        <div class="campanella">
+          <i class="fas fa-bell-slash"></i>
+        </div>
+        <div class="testo-campanella">
+          <h5>Ricevi notifiche di nuovi messaggi</h5>
+          <span>Attiva notifiche desktop</span>
+        </div>
+      </div>
       <div class="search-bar"></div>
       <div class="list-of-contacts"></div>
     </div>
