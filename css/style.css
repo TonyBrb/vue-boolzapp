@@ -6,8 +6,12 @@
 
 body{
   height: 100vh;
-  background: linear-gradient(180deg, #249687 20px, #DADBD3 150px);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-image: linear-gradient(to bottom,#009688 0px,
+  #009688 15vh,
+  #dddbd1 15vh,
+  #d2dbdc 100%);
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
 }
 
 .container{
@@ -57,9 +61,11 @@ body{
 }
 
 .list-of-contacts{
-  width: 98%;
+  width: 100%;
   height: calc(100% - 140px);
   background-color: #FAFAFA;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .current-contact{
@@ -73,6 +79,10 @@ body{
   width: 100%;
   height: calc(100% - 100px);
   background-image: url(../img/mine.jpg);
+  padding: 20px;
+  font-size: 15px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .digit-message{
@@ -227,15 +237,36 @@ body{
 }
 
 .inviato{
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #D6FABB;
   width: 30%;
-  justify-self: end;
+  float: right;
+  clear: both;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: relative;
 }
 
 .ricevuto{
-  border-radius: 20px;
+  border-radius: 10px;
   width: 30%;
   background-color: #fff;
-  justify-self: end;
+  float: left;
+  clear: both;
+  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+}
+
+.data-msg{
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  color: #C2C4C5;
+  font-size: 10px;
+}
+
+.active{
+  background-color: grey;
+  color: red;
 }
