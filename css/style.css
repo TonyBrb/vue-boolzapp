@@ -155,20 +155,7 @@ body{
   border-left: none;
 }
 
-.list-of-contacts ul{
-  list-style: none;
-}
-
-.list-of-contacts ul li{
-  height: 50px;
-  background-color:#fff;
-  display: flex;
-  padding: 5px;
-  border-bottom: 1px solid #EFEFEF;
-  position: relative;
-}
-
-.list-of-contacts ul li:last-child{
+.list-of-contacts .li:last-child{
   border-bottom: none;
 }
 
@@ -183,16 +170,29 @@ body{
   width: 100%;
 }
 
-.list-of-contacts ul li .name-user{
+.li{
+  height: 50px;
+  background-color:#fff;
+  display: flex;
+  padding: 5px;
+  border-bottom: 1px solid #EFEFEF;
+  position: relative;
+}
+
+.li:hover{
+  background-color: #FAFAFA;
+}
+
+.list-of-contacts .li .name-user{
   margin-left: 10px;
 }
 
-.list-of-contacts ul li .name-user .message-intro{
+.list-of-contacts .li .name-user .message-intro{
   font-size: 10px;
   color: #C2C4C5;
 }
 
-.list-of-contacts ul li .data{
+.list-of-contacts .li .data{
   position: absolute;
   top: 0;
   right: 0;
@@ -243,7 +243,7 @@ body{
   float: right;
   clear: both;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 12px;
   position: relative;
 }
 
@@ -254,7 +254,7 @@ body{
   float: left;
   clear: both;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 12px;
   position: relative;
 }
 
@@ -267,6 +267,5 @@ body{
 }
 
 .active{
-  background-color: grey;
-  color: red;
+  background-color: #E9EBEC;
 }

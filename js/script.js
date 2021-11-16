@@ -96,7 +96,7 @@ const app = new Vue ({
     showMessages(index){
       console.log(index);
       this.active_user=index;
-      this.isActive=true;
+      this.isActive=!this.isActive;
       console.log(active_user);
     }
   }

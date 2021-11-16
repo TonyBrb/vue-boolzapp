@@ -35,8 +35,7 @@
         <input type="text" placeholder="Cerca o inizia una nuova chat">
       </div>
       <div class="list-of-contacts">
-        <ul>
-          <li v-for = "(item, index) in contacts" @click="showMessages(index)">
+          <div class="li" v-for = "(item, index) in contacts" @click="showMessages(index)" :class="{active : active_user == index }">
             <div class="user-image">
               <img :src="'img/' + item.profile_image" alt="">
             </div>
@@ -49,8 +48,7 @@
             <div class="data">
               {{item.messages[2].date}}
             </div>
-          </li>
-        </ul>
+          </div>
       </div>
     </div>
     <div class="conversation">
