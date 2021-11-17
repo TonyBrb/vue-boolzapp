@@ -89,7 +89,8 @@ const app = new Vue ({
                 }
   ],
   active_user: -1,
-  isActive: false
+  isActive: false,
+  textInput:''
   },
 
   methods:{
@@ -98,6 +99,26 @@ const app = new Vue ({
       this.active_user=index;
       this.isActive=!this.isActive;
       console.log(active_user);
+    },
+    getLastMessage(index){
+        let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length-1].text;
+        if(lastMessage.length > 30){
+            lastMessage = lastMessage.slice(0,30)+"...";
+        }
+        return lastMessage;
+    },
+    getLastDate(index){
+        let lastDate = this.contacts[index].messages[this.contacts[index].messages.length-1].date;
+        return lastDate;
+    },
+    sendNewMessage(){
+        newMessage = {
+            date: '10/01/2020 15:40:55',
+            text: this.textInput,
+            status: 'sent'
+        }
+        this.contacts[this.active_user].messages.push(newMessage);
+        this.textInput='';
     }
   }
 });
