@@ -90,7 +90,8 @@ const app = new Vue ({
   ],
   active_user: -1,
   isActive: false,
-  textInput:''
+  textInput:'',
+  sendedMessage: false
   },
 
   methods:{
@@ -111,6 +112,7 @@ const app = new Vue ({
         let lastDate = this.contacts[index].messages[this.contacts[index].messages.length-1].date;
         return lastDate;
     },
+
     sendNewMessage(){
         newMessage = {
             date: '10/01/2020 15:40:55',
@@ -119,6 +121,25 @@ const app = new Vue ({
         }
         this.contacts[this.active_user].messages.push(newMessage);
         this.textInput='';
-    }
+        this.sendedMessage=true;
+        this.replyMessageTimeOut(this.sendedMessage);
+        this.sendedMessage=false;
+    },
+
+    replyMessageTimeOut(sendedMessage){
+        if(sendedMessage==true){
+        setTimeout(this.replyMessage,1000);
+        }
+    },
+
+     replyMessage(){
+        newMessage = {
+            date: '10/01/2020 15:40:55',
+            text: 'Ok',
+            status: 'received'
+        }
+        this.contacts[this.active_user].messages.push(newMessage);
+        
+    },
   }
 });
