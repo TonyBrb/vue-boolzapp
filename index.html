@@ -67,10 +67,10 @@
     <div class="conversation">
       <div class="current-contact">
         <div v-if="active_user >= 0" class="user-image">
-          <img :src="'img/' + contacts[active_user].profile_image" alt="">
+          <img :src="'img/' + activeUsers[active_user].profile_image" alt="">
         </div>
         <div class="current-contact-name">
-          <h5 v-if="active_user >=0">{{contacts[active_user].user}}</h5>
+          <h5 v-if="active_user >=0">{{activeUsers[active_user].user}}</h5>
           <h5 v-else>Nessun contatto selezionato</h5>
           <span v-if="active_user >=0">Ultimo accesso oggi alle 16:00</span>
         </div>
