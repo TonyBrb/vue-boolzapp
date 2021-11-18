@@ -44,17 +44,16 @@
       </div>
       <div class="list-of-contacts">
           <div class="li" v-for = "(item, index) in activeUsers" @click="showMessages(index)" :class="{active : active_user == index}">
-            <div class="user-image" v-if="item.visible==true">
+            <div class="user-image">
               <img :src="'img/' + item.profile_image" alt="">
             </div>
-            <div class="user-image" v-else="item.visible==true"></div>
-            <div class="name-user" v-if="item.visible==true">
+            <div class="name-user">
             <h4>{{item.user}}</h4>  
-            <div class="message-intro" v-if="item.visible==true">
+            <div class="message-intro" >
               {{getLastMessage(index)}}
             </div>
             </div>
-            <div class="data" v-if="item.visible==true">
+            <div class="data">
               {{getLastDate(index)}}
             </div>
           </div>
