@@ -3,7 +3,7 @@ const app = new Vue ({
   el: '#app',
   data:{
   contacts: [
-  {
+                {
                     user: 'Michele',
                     profile_image: 'avatar_1.jpg',
                     visible: true,
@@ -91,12 +91,20 @@ const app = new Vue ({
   active_user: -1,
   isActive: false,
   textInput:'',
-  sendedMessage: false
+  sendedMessage: false,
+  searchContact:''
   },
+
+  computed: {
+    activeUsers: function () {
+        return this.contacts.filter(function (item) {
+            return item.visible;
+        })
+    }
+    },
 
   methods:{
     showMessages(index){
-      console.log(index);
       this.active_user=index;
       this.isActive=!this.isActive;
       console.log(active_user);
@@ -141,5 +149,16 @@ const app = new Vue ({
         this.contacts[this.active_user].messages.push(newMessage);
         
     },
+
+    findContact(string){
+        for(let i=0; i < Object.keys(this.contacts).length; i++){
+            if(this.contacts[i].user.toLowerCase().includes(string)){
+            this.contacts[i].visible=true;
+            }
+            else{
+                this.contacts[i].visible=false;
+            }
+        }
+    }
   }
 });

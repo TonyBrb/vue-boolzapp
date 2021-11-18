@@ -40,20 +40,21 @@
         <div class="lente">
           <i class="fas fa-search"></i>
         </div>
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
+        <input type="text" v-model="searchContact" @keyup="findContact(searchContact)" placeholder="Cerca o inizia una nuova chat">
       </div>
       <div class="list-of-contacts">
-          <div class="li" v-for = "(item, index) in contacts" @click="showMessages(index)" :class="{active : active_user == index }">
-            <div class="user-image">
+          <div class="li" v-for = "(item, index) in activeUsers" @click="showMessages(index)" :class="{active : active_user == index}">
+            <div class="user-image" v-if="item.visible==true">
               <img :src="'img/' + item.profile_image" alt="">
             </div>
-            <div class="name-user">
+            <div class="user-image" v-else="item.visible==true"></div>
+            <div class="name-user" v-if="item.visible==true">
             <h4>{{item.user}}</h4>  
-            <div class="message-intro">
+            <div class="message-intro" v-if="item.visible==true">
               {{getLastMessage(index)}}
             </div>
             </div>
-            <div class="data">
+            <div class="data" v-if="item.visible==true">
               {{getLastDate(index)}}
             </div>
           </div>
@@ -86,11 +87,12 @@
         </ul>
         <ul v-else></ul>
       </div>
-      <div class="digit-message">
+      <div class="digit-message" v-if="active_user >= 0">
         <i class="far fa-smile"></i>
         <input @keyup.enter="sendNewMessage" v-model="textInput" type="text" placeholder="Scrivi un messaggio">
         <i class="fas fa-microphone"></i>
       </div>
+      <div v-else></div>
     </div>
   </div>
   
