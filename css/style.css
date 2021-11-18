@@ -288,6 +288,44 @@ body{
   font-size: 10px;
 }
 
+.chevron-down{
+  position: absolute;
+  font-size: 13px;
+  color: #C2C4C5;
+  right: 5px;
+  bottom: calc(50% - 10px);
+  display: none;
+}
+
+.ricevuto:hover .chevron-down{
+  display: block;
+  cursor: pointer;
+}
+
+.inviato:hover .chevron-down{
+  display: block;
+  cursor: pointer;
+}
+
 .active{
   background-color: #E9EBEC;
+}
+
+.dropdown{
+  background-color: #FAFAFA;
+  padding: 5px;
+  position: absolute;
+  z-index: 100;
+  bottom: calc(-50% - 13px);
+  right: 0;
+  display: none;
+}
+
+.dropdown a{
+  text-decoration: none;
+  color: grey;
+}
+
+.dropdown-active{
+  display: block;
 }

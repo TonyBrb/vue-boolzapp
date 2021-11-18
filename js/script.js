@@ -92,7 +92,8 @@ const app = new Vue ({
   isActive: false,
   textInput:'',
   sendedMessage: false,
-  searchContact:''
+  searchContact:'',
+//   clicked: false
   },
 
   computed: {
@@ -160,5 +161,16 @@ const app = new Vue ({
             }
         }
     }
+
+    // showMenuChevron(){
+    //     this.clicked=!this.clicked;
+    //     const dropdown = document.querySelector('.dropdown');
+    //     if(this.clicked == true){
+    //         dropdown.classList.add('dropdown-active');
+    //     }
+    //     else{
+    //         dropdown = document.classList.remove('dropdown-active');
+    //     }
+    // }
   }
 });

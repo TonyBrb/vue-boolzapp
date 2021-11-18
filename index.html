@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <title>Vue Boolzapp</title>
 </head>
+
 <body>
   <div id="app" class="container">
     <div class="contacts">
@@ -40,23 +42,26 @@
         <div class="lente">
           <i class="fas fa-search"></i>
         </div>
-        <input type="text" v-model="searchContact" @keyup="findContact(searchContact)" placeholder="Cerca o inizia una nuova chat">
+        <input type="text" v-model="searchContact" @keyup="findContact(searchContact)"
+          placeholder="Cerca o inizia una nuova chat">
       </div>
       <div class="list-of-contacts">
-          <div class="li" v-for = "(item, index) in activeUsers" @click="showMessages(index)" :class="{active : active_user == index}">
-            <div class="user-image">
-              <img :src="'img/' + item.profile_image" alt="">
-            </div>
-            <div class="name-user">
-            <h4>{{item.user}}</h4>  
-            <div class="message-intro" >
+        <div class="li" v-for="(item, index) in activeUsers" @click="showMessages(index)"
+          :class="{active : active_user == index}">
+          <div class="user-image" v-if="item.visible==true">
+            <img :src="'img/' + item.profile_image" alt="">
+          </div>
+          <div class="user-image" v-else="item.visible==true"></div>
+          <div class="name-user" v-if="item.visible==true">
+            <h4>{{item.user}}</h4>
+            <div class="message-intro" v-if="item.visible==true">
               {{getLastMessage(index)}}
             </div>
-            </div>
-            <div class="data">
-              {{getLastDate(index)}}
-            </div>
           </div>
+          <div class="data" v-if="item.visible==true">
+            {{getLastDate(index)}}
+          </div>
+        </div>
       </div>
     </div>
     <div class="conversation">
@@ -69,18 +74,18 @@
           <h5 v-else>Nessun contatto selezionato</h5>
           <span v-if="active_user >=0">Ultimo accesso oggi alle 16:00</span>
         </div>
-          <div class="options-right">
-            <i class="fas fa-circle-notch"></i>
-            <i class="fas fa-comment-alt"></i>
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
+        <div class="options-right">
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
       </div>
       <div class="messages">
         <ul v-if="active_user >= 0">
-          <li v-for = "(messaggio,index) in contacts[active_user].messages">
+          <li v-for="(messaggio,index) in contacts[active_user].messages">
             <div :class="{ 'inviato' : messaggio.status == 'sent', 'ricevuto' : messaggio.status == 'received' }">
-            <div class="msg">{{messaggio.text}}</div> 
-            <div class="data-msg">{{messaggio.date}}</div>
+              <div class="msg">{{messaggio.text}}</div>
+              <div class="data-msg">{{messaggio.date}}</div>
             </div>
           </li>
         </ul>
@@ -91,11 +96,11 @@
         <input @keyup.enter="sendNewMessage" v-model="textInput" type="text" placeholder="Scrivi un messaggio">
         <i class="fas fa-microphone"></i>
       </div>
-      <div v-else></div>
     </div>
   </div>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>
