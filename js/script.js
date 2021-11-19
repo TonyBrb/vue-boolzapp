@@ -152,6 +152,7 @@ const app = new Vue ({
     },
 
     findContact(string){
+        string=string.toLowerCase();
         for(let i=0; i < Object.keys(this.contacts).length; i++){
             if(this.contacts[i].user.toLowerCase().includes(string)){
             this.contacts[i].visible=true;
